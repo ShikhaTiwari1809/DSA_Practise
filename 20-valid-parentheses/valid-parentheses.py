@@ -1,6 +1,7 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack =[]
+        
         closing_mapping = {')':'(',
         '}':'{',
         ']':'['}
@@ -8,7 +9,7 @@ class Solution:
         characters = list(s)
        
         for ch in characters:
-            if ch in closing_mapping.values():
+            if ch in "({[":
                 stack.append(ch)
             else:
                 if len(stack)==0:
