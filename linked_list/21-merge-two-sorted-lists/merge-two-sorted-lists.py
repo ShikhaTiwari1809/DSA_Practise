@@ -6,28 +6,19 @@
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         head = ListNode()
-        current = head
-        if list1 is None and list2 is None:
-            return None
-        elif list1 is None:
-            return list2
-        elif list2 is None:
-            return list1
-        else:
-            while list1  and list2 :
-                
-                if list1.val<=list2.val:
-                    current.next = list1
-                    list1 = list1.next
-                else:
-                    current.next = list2
-                    list2 = list2.next
+        mergedList =  head
 
-                current = current.next 
-        current.next = list1 or list2    
-        return head.next 
-                
-                
-       
-
+        while list1 and list2:
+            if list1.val<=list2.val:
+                mergedList.next = list1
+                list1 = list1.next
+            else:
+                mergedList.next = list2
+                list2 = list2.next
+            mergedList = mergedList.next
         
+        mergedList.next = list1 or list2
+        head = head.next
+
+        return head
+
