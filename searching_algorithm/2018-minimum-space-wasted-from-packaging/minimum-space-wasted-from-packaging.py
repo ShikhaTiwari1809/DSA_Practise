@@ -1,6 +1,3 @@
-from typing import List
-import bisect
-
 class Solution:
     def minWastedSpace(self, packages: List[int], boxes: List[List[int]]) -> int:
         MOD = 10**9 + 7
