@@ -1,7 +1,4 @@
-class Solution:
-    def numMatchingSubseq(self, s: str, words: List[str]) -> int:
-        
-        from collections import defaultdict, deque
+from collections import defaultdict, deque
 from typing import List
 
 class Solution:
