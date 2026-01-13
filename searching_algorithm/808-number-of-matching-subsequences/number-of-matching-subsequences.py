@@ -1,26 +1,22 @@
-from collections import defaultdict, deque
-from typing import List
-
 class Solution:
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
-        waiting = defaultdict(deque)
+        
+        map = defaultdict(list)  #group each word by thier first alphabet
 
-        # Put each word into the bucket of its first needed character
-        for w in words:
-            waiting[w[0]].append((w, 0))  # (word, index of next char to match)
+        for word in words:
+            map[word[0]].append(word)
 
-        ans = 0
+        result = 0
 
-        for ch in s:
-            bucket = waiting[ch]
-            waiting[ch] = deque()  # clear; we'll refill with advanced states
-
-            while bucket:
-                w, i = bucket.popleft()
-                i += 1  # matched this char
-                if i == len(w):
-                    ans += 1
+        for c in s:
+            var = map[c]
+            map[c] = []
+            for temp in var:
+                if len(temp) == 1:
+                    result += 1
                 else:
-                    waiting[w[i]].append((w, i))
+                    map[temp[1]].append(temp[1:])
+                
 
-        return ans
+
+        return result
