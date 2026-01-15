@@ -5,12 +5,8 @@ class Solution:
         final_num = []
 
         while l1<len(nums1) and l2<len(nums2):
-            if nums1[l1]==nums2[l2]:
-                final_num.append(nums1[l1])
-                final_num.append(nums2[l2])
-                l1+=1
-                l2+=1
-            elif nums1[l1]<nums2[l2]:
+            
+            if nums1[l1]<=nums2[l2]:
                 final_num.append(nums1[l1])
                 l1+=1
             else:
