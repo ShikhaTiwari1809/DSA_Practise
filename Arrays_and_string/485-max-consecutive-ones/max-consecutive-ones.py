@@ -7,7 +7,8 @@ class Solution:
             if i == 1:
                 current_cnt+=1
             else:
+                cnt = max(current_cnt,cnt)
                 current_cnt = 0
-            cnt = max(current_cnt,cnt)
+            
         
-        return cnt
+        return max(current_cnt,cnt)
