@@ -19,7 +19,7 @@ class Solution:
                 cur_max-=1
             max_cnt = max(max_cnt, cur_max)
         
-        print(max_cnt)
+        
         return max_cnt
 
         
