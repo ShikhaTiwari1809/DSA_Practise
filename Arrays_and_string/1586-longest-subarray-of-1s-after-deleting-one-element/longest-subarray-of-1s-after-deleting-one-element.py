@@ -12,4 +12,4 @@ class Solution:
                     num_delete-=1
                 left+=1
         
-        return right - left
+        return len(nums) - left -1
