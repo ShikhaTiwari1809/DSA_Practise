@@ -14,12 +14,19 @@ class Solution:
                 return 0
             
             left_height = height(root.left)
+            if left_height == -1:
+                return -1
+
             right_height = height(root.right)
+            if right_height == -1:
+                return -1
+
 
             if abs(left_height-right_height)>1:
                 balanced[0] = False
-                return 0
+                return -1
             
             return 1+max(left_height, right_height)
+        
         h = height(root)
-        return balanced[0]
+        return h!=-1
