@@ -8,7 +8,7 @@ class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
-        
+
         q = deque([root])
         depth =0
         while q:
@@ -20,3 +20,4 @@ class Solution:
                     q.append(node.right)
             depth+=1
         return depth
+                
