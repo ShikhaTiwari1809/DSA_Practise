@@ -23,7 +23,5 @@ class Solution:
                     q.append(node.right)
             traverse.append(level)  
             
-        
-        print(traverse)
         return traverse
         
