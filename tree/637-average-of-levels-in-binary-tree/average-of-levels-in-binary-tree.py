@@ -12,16 +12,18 @@ class Solution:
         q = deque([root])
         average =[]
         while q:
-            level_avg =[]
-            for _ in range(len(q)):
+            level_sum = 0
+            level_size = len(q)
+
+            for _ in range(level_size):
                 node = q.popleft()
-                level_avg.append(node.val)
+                level_sum+= node.val
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
             
-            cur_avg = sum(level_avg)/len(level_avg)
+            cur_avg = level_sum/level_size
             average.append(cur_avg)
         
         return average
