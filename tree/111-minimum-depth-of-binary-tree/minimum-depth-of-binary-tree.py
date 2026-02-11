@@ -26,9 +26,6 @@ class Solution:
                 if node.right:
                     q.append(node.right)
             depth+=1
-            #print(cur_depth)
-            #print(depth)
-        
-        print(depth_val)
+            
         return min(depth_val)
         
