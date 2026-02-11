@@ -23,6 +23,6 @@ class Solution:
         if best_max < 0:
             return best_max
         
-        return max(best_max, total - best_min)
+        return max(best_max, sum(nums) - best_min)
 
         
