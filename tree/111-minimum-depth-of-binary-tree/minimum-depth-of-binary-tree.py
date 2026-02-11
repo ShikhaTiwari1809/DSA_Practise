@@ -14,11 +14,11 @@ class Solution:
         depth_val = []
         depth =0
         while q:
-            cur_depth =0
+            
             
             for _ in range(len(q)):
                 node = q.popleft()
-                cur_depth +=1
+                
                 if node.left is None and node.right is None:
                     depth_val.append(depth+1)
                 if node.left:
