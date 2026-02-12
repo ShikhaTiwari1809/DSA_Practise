@@ -7,19 +7,21 @@
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
         
-        self.max_depth = -1
-        self.answer = 0
+        q = deque([root])
+        left_node = None
+
+        while q:
+            #ans = q[0].val 
+            for _ in range(len(q)):
+                
+                node = q.popleft()
+                left_node = node.val
+
+                if node.right:
+                    q.append(node.right)
+                
+                if node.left:
+                    q.append(node.left)
+                
         
-        def dfs(node, depth):
-            if not node:
-                return
-            
-            if depth > self.max_depth:
-                self.max_depth = depth
-                self.answer = node.val
-            
-            dfs(node.left, depth + 1)
-            dfs(node.right, depth + 1)
-        
-        dfs(root, 0)
-        return self.answer
+        return left_node
