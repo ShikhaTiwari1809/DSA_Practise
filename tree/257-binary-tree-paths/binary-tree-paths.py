@@ -24,8 +24,6 @@ class Solution:
             if node.left:
                 stack.append((node.left, path +[node.left.val]))
 
-        print(result)
-        
         
         return result
 
