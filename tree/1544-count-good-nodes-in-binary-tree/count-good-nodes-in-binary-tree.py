@@ -10,13 +10,14 @@ class Solution:
             return 0
 
         count = 0
-        stack = [(root, root.val)]  # (node, max_so_far)
+        stack = [(root, root.val)]  # (node, maximum value so far)
 
         while stack:
             node, max_so_far = stack.pop()
-
+            
             if node.val >= max_so_far:
                 count += 1
+                
                 max_so_far = node.val  # update since it's the new max
 
             if node.right:
