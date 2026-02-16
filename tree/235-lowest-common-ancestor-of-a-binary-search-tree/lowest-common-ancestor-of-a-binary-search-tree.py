@@ -15,8 +15,8 @@ class Solution:
             
             lca[0] = root
 
-            #if root is p or root is q:
-            #    return
+            if root is p or root is q:
+                return
             
             if root.val<p.val and root.val < q.val:
                 search(root.right)
