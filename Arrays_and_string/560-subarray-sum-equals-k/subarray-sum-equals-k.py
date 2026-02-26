@@ -1,0 +1,15 @@
+from collections import defaultdict
+from typing import List
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        freq = defaultdict(int)
+        freq[0] = 1  # empty prefix sum
+        prefix = 0
+        ans = 0
+
+        for x in nums:
+            prefix += x
+            ans += freq[prefix - k]
+            freq[prefix] += 1
+
+        return ans
