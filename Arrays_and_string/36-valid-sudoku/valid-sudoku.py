@@ -1,7 +1,6 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         
-        valid = ['1','2','3','4','5','6','7','8','9']
         
         # Check rows
         for i in range(9):
